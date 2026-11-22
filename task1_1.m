@@ -32,6 +32,7 @@ Phi_e = feedback(G_e, 1);
 
 figure();
 step(Phi_a, Phi_b, Phi_c, Phi_d, Phi_e);
-xlabel("t");
-ylabel("X(t)");
-legend('\Phi_A', '\Phi_B', '\Phi_C', '\Phi_D', '\Phi_E');
+title("任务 1 阶跃响应对比图");
+xlabel("t", 'Interpreter', 'latex');
+ylabel("$X_{O}(t)$", 'Interpreter', 'latex');
+set(legend(), 'String', {'$\Phi_{A}$', '$\Phi_{B}$', '$\Phi_{C}$', '$\Phi_{D}$', '$\Phi_{E}$'}, 'Interpreter', 'latex');
