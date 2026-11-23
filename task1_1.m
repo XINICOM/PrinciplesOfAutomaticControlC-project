@@ -16,6 +16,7 @@
 
 clear; clc;
 
+%% task 1-1
 K_p = 1;
 
 G_a = tf(K_p * 10, [0.1 , 1, 0]);
@@ -34,5 +35,14 @@ figure();
 step(Phi_a, Phi_b, Phi_c, Phi_d, Phi_e);
 title("任务 1 阶跃响应对比图");
 xlabel("t", 'Interpreter', 'latex');
-ylabel("$X_{O}(t)$", 'Interpreter', 'latex');
+ylabel("$x_{O}(t)$", 'Interpreter', 'latex');
 set(legend(), 'String', {'$\Phi_{A}$', '$\Phi_{B}$', '$\Phi_{C}$', '$\Phi_{D}$', '$\Phi_{E}$'}, 'Interpreter', 'latex');
+
+%% task 1-2
+Result_half   = stepinfo(Phi_b);
+Result_normal = stepinfo(Phi_a);
+Result_double = stepinfo(Phi_c);
+
+fprintf("KP = 0.5 调整时间：%f\n", Result_half.SettlingTime  );
+fprintf("KP = 1   调整时间：%f\n", Result_normal.SettlingTime);
+fprintf("KP = 2   调整时间：%f\n", Result_double.SettlingTime);
