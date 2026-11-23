@@ -14,16 +14,14 @@
 % You should have received a copy of the GNU General Public License
 % along with this program. If not, see <https://www.gnu.org/licenses/
 
-clear; clc;
+clear; clc; close all;
 
 %% task 1-1
-K_p = 1;
-
-G_a = tf(K_p * 10, [0.1 , 1, 0]);
-G_b = tf(K_p * 5 , [0.1 , 1, 0]);
-G_c = tf(K_p * 20, [0.1 , 1, 0]);
-G_d = tf(K_p * 10, [0.2 , 1, 0]);
-G_e = tf(K_p * 10, [0.05, 1, 0]);
+G_a = tf(10, [0.1 , 1, 0]);
+G_b = tf(5 , [0.1 , 1, 0]);
+G_c = tf(20, [0.1 , 1, 0]);
+G_d = tf(10, [0.2 , 1, 0]);
+G_e = tf(10, [0.05, 1, 0]);
 
 Phi_a = feedback(G_a, 1);
 Phi_b = feedback(G_b, 1);
@@ -33,10 +31,11 @@ Phi_e = feedback(G_e, 1);
 
 figure();
 step(Phi_a, Phi_b, Phi_c, Phi_d, Phi_e);
-title("任务 1 阶跃响应对比图");
-xlabel("t", 'Interpreter', 'latex');
-ylabel("$x_{O}(t)$", 'Interpreter', 'latex');
-set(legend(), 'String', {'$\Phi_{A}$', '$\Phi_{B}$', '$\Phi_{C}$', '$\Phi_{D}$', '$\Phi_{E}$'}, 'Interpreter', 'latex');
+title("图 1-1 五组阶跃响应叠加图");
+grid on;
+xlabel("t", "Interpreter", "latex");
+ylabel("$\theta(t)$", "Interpreter", "latex");
+set(legend(), "String", {"$\Phi_{A}$", "$\Phi_{B}$", "$\Phi_{C}$", "$\Phi_{D}$", "$\Phi_{E}$"}, "Interpreter", "latex");
 
 %% task 1-2
 Result_half   = stepinfo(Phi_b);
