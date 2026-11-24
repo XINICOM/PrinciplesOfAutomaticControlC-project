@@ -14,13 +14,49 @@
 % You should have received a copy of the GNU General Public License
 % along with this program. If not, see <https://www.gnu.org/licenses/
 
-clear; clc;
+clear; clc; close all;
 
 %% test cal 1 a
-G_a = tf(1 * 10, [0.1 , 1, 0]);
-Phi_a = feedback(G_a, 1);
-A = tf(1, [0.01, 0.1, 1]);
-p = minreal(Phi_a);
-a = minreal(A);
-diff = minreal(p - a);
-disp(diff);
+% G_a = tf(1 * 10, [0.1 , 1, 0]);
+% Phi_a = feedback(G_a, 1);
+% A = tf(1, [0.01, 0.1, 1]);
+% p = minreal(Phi_a);
+% a = minreal(A);
+% diff = minreal(p - a);
+% disp(diff);
+
+%% test cal 1 b
+% G_a = tf(1 * 5, [0.1 , 1, 0]);
+% Phi_a = feedback(G_a, 1);
+% A = tf(50, [1, 10, 50]);
+% p = minreal(Phi_a);
+% a = minreal(A);
+% diff = minreal(p - a);
+% disp(diff);
+
+%% test cal 1 c
+% G_a = tf(1 * 20, [0.1 , 1, 0]);
+% Phi_a = feedback(G_a, 1);
+% A = tf(200, [1, 10, 200]);
+% p = minreal(Phi_a);
+% a = minreal(A);
+% diff = minreal(p - a);
+% disp(diff);
+
+%% test cal 1 d
+% G_a = tf(1 * 10, [0.2 , 1, 0]);
+% Phi_a = feedback(G_a, 1);
+% A = tf(50, [1, 5, 50]);
+% p = minreal(Phi_a);
+% a = minreal(A);
+% diff = minreal(p - a);
+% disp(diff);
+
+%% test cal 1 e
+% G_a = tf(1 * 10, [0.05 , 1, 0]);
+% Phi_a = feedback(G_a, 1);
+% A = tf(200, [1, 20, 200]);
+% p = minreal(Phi_a);
+% a = minreal(A);
+% diff = minreal(p - a);
+% disp(diff);
