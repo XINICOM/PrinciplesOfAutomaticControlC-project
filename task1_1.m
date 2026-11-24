@@ -31,7 +31,12 @@ Phi_e = feedback(G_e, 1);
 
 figure();
 step(Phi_a, Phi_b, Phi_c, Phi_d, Phi_e);
-title("图 1-1 五组阶跃响应叠加图");
+title("");
+text(0.5, -0.1, '图 1-1 五组阶跃响应叠加图', ...
+    'Units', 'normalized', ...
+    'HorizontalAlignment', 'center', ...
+    'VerticalAlignment', 'top', ...
+    'FontSize', 12);
 grid on;
 xlabel("t", "Interpreter", "latex");
 ylabel("$\theta(t)$", "Interpreter", "latex");
